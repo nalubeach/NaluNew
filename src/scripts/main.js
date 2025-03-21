@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('active');
+      menuToggle.classList.toggle('active'); // Adiciona/remova a classe ao botão
       toggleMenuIcon();
     });
   }
@@ -85,12 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function toggleMenuIcon() {
   if (!menuToggle) return;
 
+  menuToggle.classList.toggle('active'); // Alterna a classe do botão
+
   const spans = menuToggle.querySelectorAll('span');
 
-  if (nav.classList.contains('active')) {
-    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-    spans[1].style.opacity = '0';
-    spans[2].style.transform = 'rotate(-45deg) translate(8px, -8px)';
+  if (menuToggle.classList.contains('active')) {
+    spans[0].style.transform = 'translateY(9px) rotate(45deg)';
+    spans[1].style.opacity = '0'; // Esconde a linha do meio
+    spans[2].style.transform = 'translateY(-9px) rotate(-45deg)';
   } else {
     spans[0].style.transform = 'none';
     spans[1].style.opacity = '1';
@@ -99,11 +102,11 @@ function toggleMenuIcon() {
 }
 
 // Scroll to unhide header
-  window.addEventListener('scroll', function() {
-    const header = document.querySelector('.site-header');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('.site-header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
