@@ -97,3 +97,13 @@ function toggleMenuIcon() {
     spans[2].style.transform = 'none';
   }
 }
+
+// Scroll to unhide header
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.site-header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });

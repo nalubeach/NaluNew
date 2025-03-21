@@ -129,6 +129,19 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-dark-green);
 }
 
+/* Inicialmente esconda o logo e o botão de reservas */
+.site-header .logo,
+.site-header .reservation-button {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Mostre o logo e o botão de reservas quando a classe 'scrolled' estiver presente */
+.site-header.scrolled .logo,
+.site-header.scrolled .reservation-button {
+  opacity: 1;
+}
+
 .logo {
   width: 80px;
 }
