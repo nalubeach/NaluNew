@@ -40,11 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile menu toggle
   if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      menuToggle.classList.toggle('active'); // Adiciona/remova a classe ao botão
-      toggleMenuIcon();
+      nav.classList.toggle('active'); // Abre ou fecha o menu
+      menuToggle.classList.toggle('active'); // Transforma o ícone em "X"
     });
   }
+
 
   // Close modal
   if (closeModalBtn && modal) {
