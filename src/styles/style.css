@@ -86,9 +86,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .highlight-logo {
-  vertical-align: middle; /* Alinha a imagem verticalmente ao meio do texto */
-  height: 1.4em; /* Ajuste a altura da imagem conforme necessário */
-  display: inline-block; /* Garante que a imagem seja tratada como texto */
+  display: block; /* Garante que a imagem ocupe uma linha inteira */
+  margin: 0 auto; /* Centraliza a imagem */
+  height: 6em; /* Ajuste a altura da imagem conforme necessário */
 }
 
 /* Buttons */
@@ -573,6 +573,11 @@ h1, h2, h3, h4, h5, h6 {
   .menu-features {
     grid-template-columns: 1fr;
   }
+
+  .partner-logos {
+    flex-direction: row; /* Alinha os ícones na horizontal */
+  }
+}
 
   .footer-bottom {
     flex-direction: column;
