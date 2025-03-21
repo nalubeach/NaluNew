@@ -596,7 +596,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .partner-logos {
-    flex-direction: row; /* Alinha os ícones na horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Impede que os logos quebrem para outra linha */
+    gap: 1.5rem; /* Ajusta o espaçamento entre os logos */
+    padding: 1rem 0;
+  }
+
+  .partner-logos img {
+    height: 35px; /* Reduz o tamanho dos ícones */
+    width: auto;
   }
 }
 
