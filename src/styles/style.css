@@ -31,7 +31,7 @@
   --color-dark-green: #2c7079;
   --color-forest-green: #293c51;
   --color-mid-green: #0f220c;
-  --color-light-tan: #cbbda5;
+  --color-light-tan: #242424;
   --color-brown: #624228;
   --color-olive: #6e735a;
   --color-rust: #af3a14;
@@ -372,6 +372,7 @@ h1, h2, h3, h4, h5, h6 {
 .partners {
   padding: 3rem 0;
   background-color: var(--color-light-tan);
+  color: white
 }
 
 .partner-logos {
