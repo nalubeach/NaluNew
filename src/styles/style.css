@@ -226,9 +226,24 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Introduction Section */
 .intro {
-  padding: 5rem 0;
-  background-color: var(--color-dark-green);
+  position: relative;
+  background-image: url('../../images/barracas.webp'); /* substitui com o caminho da imagem desejada */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 80px 0; /* ajusta conforme o teu layout */
+  color: white; /* se precisares de contraste com o fundo */
   text-align: center;
+  z-index: 1;
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* escurece a imagem para melhorar a legibilidade */
+  z-index: -1;
 }
 
 .intro h2 {
@@ -370,8 +385,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Partners Section */
 .partners {
-  padding: 3rem 0;
-  background-color: var(--color-light-tan);
+  background-image: url('../../images/sunset.webp'); /* Caminho para a tua imagem */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 60px 0; /* Ajusta conforme necessário */
+  color: white; /* Se precisares de contraste com a imagem */
+  text-align: center;
 }
 
 .partner-logos {
