@@ -10,32 +10,38 @@ const reservationButtons = document.querySelectorAll('.btn-reservation');
 const modal = document.getElementById('mothersDay');
 const closeModalBtn = document.querySelector('.close-btn');
 const bookingModal = document.querySelector('.booking-modal');
+const popupImage = document.getElementById('popup-image');
+const popupCloseBtn = document.getElementById('popup-close-btn');
+
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicializa as animações na rolagem
   initAnimations();
-
-  // Inicializa o lightbox para a galeria de imagens
   initLightbox();
 
-  // Set initial state (show Mother's Day modal)
-  if (modal) {
-    setTimeout(() => {
-      modal.classList.add('active');
-    }, 2000);
-  }
+// === POPUP DE IMAGEM (só 1 vez por sessão) ===
+if (popupImage && !sessionStorage.getItem('popupShown')) {
+  setTimeout(() => {
+    popupImage.classList.add('active');
+    sessionStorage.setItem('popupShown', 'true');
+  }, 2000);
+}
 
-  // Header scroll effect
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-  }
+if (popupCloseBtn) {
+  popupCloseBtn.addEventListener('click', () => {
+    popupImage.classList.remove('active');
+  });
+}
+
+if (popupImage) {
+  popupImage.addEventListener('click', (e) => {
+    if (e.target === popupImage) {
+      popupImage.classList.remove('active');
+    }
+  });
+}
+
+
 
   // Mobile menu toggle
   if (menuToggle && nav) {
